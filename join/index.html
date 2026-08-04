@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ProteqTech — Agent Appointment</title>
+<meta name="description" content="Get appointed to quote and bind GAP, A&H, and Flood across multiple carriers from one login — with Commercial and Property opening later in 2026.">
+<style>
+  :root {
+    --ink: #0B1524;
+    --ink-soft: #1C2A3F;
+    --paper: #F6F4EF;
+    --paper-line: #E3DFD4;
+    --amber: #E08B2C;
+    --amber-deep: #B96B18;
+    --live: #3C8C6B;
+    --pending: #B08A2E;
+    --muted: #6B7385;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Georgia', 'Iowan Old Style', serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .mono {
+    font-family: 'SF Mono', 'IBM Plex Mono', Menlo, monospace;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 48px;
+    border-bottom: 1px solid var(--paper-line);
+  }
+  .wordmark { font-size: 15px; font-weight: 700; letter-spacing: 0.02em; text-decoration: none; color: var(--ink); }
+  .wordmark span { color: var(--amber-deep); }
+  .header-note { font-size: 12px; color: var(--muted); }
+
+  .hero {
+    padding: 72px 48px 56px;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 28px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--live);
+  }
+  h1 {
+    font-size: clamp(38px, 5vw, 56px);
+    line-height: 1.08;
+    margin: 0 0 22px;
+    font-weight: 400;
+    max-width: 14ch;
+  }
+  h1 em { font-style: normal; color: var(--amber-deep); }
+  .sub {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    max-width: 46ch;
+    margin: 0 0 36px;
+  }
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 15px 28px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    transition: background 0.15s ease;
+  }
+  .cta:hover { background: var(--ink-soft); }
+  .cta-note {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 12.5px;
+    color: var(--muted);
+    margin-top: 14px;
+  }
+
+  .lanes-section {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 48px 88px;
+  }
+  .lanes-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid var(--paper-line);
+    padding-bottom: 14px;
+    margin-bottom: 4px;
+  }
+  .lanes-title { font-size: 12px; color: var(--muted); }
+  .lanes-asof { font-size: 11px; color: var(--muted); font-family: -apple-system, sans-serif; }
+
+  .lane-row {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 26px 0;
+    border-bottom: 1px solid var(--paper-line);
+  }
+  .lane-row:last-child { border-bottom: none; }
+  .lane-status {
+    width: 84px;
+    flex-shrink: 0;
+    font-size: 10.5px;
+    font-weight: 700;
+  }
+  .lane-status.live { color: var(--live); }
+  .lane-status.pending { color: var(--pending); }
+  .lane-name {
+    font-size: 21px;
+    flex: 1;
+  }
+  .lane-detail {
+    font-family: -apple-system, sans-serif;
+    font-size: 13.5px;
+    color: var(--muted);
+    width: 260px;
+    text-align: right;
+  }
+
+  .foot-note {
+    font-family: -apple-system, sans-serif;
+    font-size: 12.5px;
+    color: var(--muted);
+    max-width: 56ch;
+    padding-top: 28px;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 720px) {
+    header, .hero, .lanes-section { padding-left: 24px; padding-right: 24px; }
+    .lane-row { flex-wrap: wrap; }
+    .lane-detail { width: 100%; text-align: left; margin-top: 4px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="wordmark">Proteq<span>Tech</span></a>
+  <div class="header-note mono">Agent Appointment</div>
+</header>
+
+<section class="hero">
+  <div class="eyebrow mono">Joining direct — not through your aggregator</div>
+  <h1>Quote and bind more lines, from <em>one login</em>.</h1>
+  <p class="sub">
+    ProteqTech puts multi-carrier GAP, A&amp;H, and flood quoting in front of your desk today —
+    with commercial and property opening on the same platform this year. No new AMS, no separate
+    carrier portals.
+  </p>
+  <a href="https://app.proteqtech.com/signup/direct" class="cta">Start my appointment &rarr;</a>
+  <div class="cta-note">Under two minutes. Agency and license details, that's it.</div>
+</section>
+
+<section class="lanes-section">
+  <div class="lanes-head">
+    <div class="lanes-title mono">Product lanes</div>
+    <div class="lanes-asof">Status as of Aug 2026</div>
+  </div>
+
+  <div class="lane-row">
+    <div class="lane-status live mono">Live</div>
+    <div class="lane-name">Personal Auto &amp; Bundle</div>
+    <div class="lane-detail">GAP · Accident &amp; Health included</div>
+  </div>
+
+  <div class="lane-row">
+    <div class="lane-status live mono">Live</div>
+    <div class="lane-name">Flood</div>
+    <div class="lane-detail">Five-carrier comparison, building coverage to $20M</div>
+  </div>
+
+  <div class="lane-row">
+    <div class="lane-status pending mono">Q3 2026</div>
+    <div class="lane-name">Commercial</div>
+    <div class="lane-detail">Multi-product toggle quoting</div>
+  </div>
+
+  <div class="lane-row">
+    <div class="lane-status pending mono">Q4 2026</div>
+    <div class="lane-name">Property &amp; Specialty</div>
+    <div class="lane-detail">Scheduled property, jewelry &amp; firearms</div>
+  </div>
+
+  <p class="foot-note">
+    Appointed agents get access to each lane the moment it opens — no re-signup.
+    ProteqTech is a technology platform operated by GAPInsurTech LLC d/b/a ProteqTech.
+    Appointment and commission terms are governed by your carrier agreements.
+  </p>
+</section>
+
+</body>
+</html>
